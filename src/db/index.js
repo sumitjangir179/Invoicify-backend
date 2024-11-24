@@ -7,8 +7,8 @@ const sequelize = new Sequelize("invoicify", "root", "root", {
 
 const connectDB = async () => {
   try {
-    const connectionInstance = await sequelize.authenticate();
-    console.log("Database connected successfully", connectionInstance);
+    await sequelize.authenticate();
+    console.log("Database connected successfully");
   } catch (error) {
     console.log("Error in DB connection", error.message);
     process.exit(1);
